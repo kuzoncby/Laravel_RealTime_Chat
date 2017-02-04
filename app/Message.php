@@ -11,7 +11,7 @@ class Message extends Model
      */
     public function user()
     {
-        $this->belongsTo('App\User', 'user_id', 'id');
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
     /**
@@ -19,6 +19,6 @@ class Message extends Model
      */
     public function room()
     {
-        $this->belongsTo('App\Room', 'room_id', 'id');
+        return $this->belongsTo('App\Room', 'room_id', 'id');
     }
 }

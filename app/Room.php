@@ -8,11 +8,11 @@ class Room extends Model
 {
     public function users()
     {
-        $this->belongsToMany('App\User', 'user_id', 'id', 'user_room');
+        return $this->belongsToMany('App\User', 'user_room', 'room_id');
     }
 
     public function messages()
     {
-        $this->hasMany('App\Message', 'id', 'room_id');
+        return $this->hasMany('App\Message', 'id', 'room_id');
     }
 }

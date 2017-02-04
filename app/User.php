@@ -32,7 +32,7 @@ class User extends Authenticatable
      */
     public function rooms()
     {
-        $this->hasMany('App\Room', 'id', 'user_id', 'user_room');
+        return $this->belongsToMany('App\Room', 'user_room', 'user_id');
     }
 
     /**
@@ -40,6 +40,6 @@ class User extends Authenticatable
      */
     public function messages()
     {
-        $this->hasMany('App\Message', 'id', 'user_id');
+        return $this->hasMany('App\Message', 'id', 'user_id');
     }
 }
