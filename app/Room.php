@@ -13,6 +13,6 @@ class Room extends Model
 
     public function messages()
     {
-        return $this->hasMany('App\Message', 'id', 'room_id');
+        return $this->hasMany('App\Message', 'room_id', 'id');
     }
 }
