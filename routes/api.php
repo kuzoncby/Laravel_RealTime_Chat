@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/rooms', 'ChatController@rooms');
+Route::post('/me', 'ChatController@user');
+Route::post('/rooms', 'ChatController@rooms');
