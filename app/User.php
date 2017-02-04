@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User rooms
+     */
+    public function rooms()
+    {
+        $this->hasMany('App\Room', 'id', 'user_id', 'user_room');
+    }
+
+    /**
+     * User messages
+     */
+    public function messages()
+    {
+        $this->hasMany('App\Message', 'id', 'user_id');
+    }
 }
