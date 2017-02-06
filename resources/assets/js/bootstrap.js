@@ -37,9 +37,26 @@ window.axios.defaults.headers.common = {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
+import Echo from "laravel-echo"
 
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '074ddcebd165563c7461'
+});
+
+// import Echo from 'laravel-echo';
+//
 // window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
+//     broadcaster: 'socket.io',
+//     host: 'http://localhost:6001',
+//     auth: {
+//         headers: {
+//             'Authorization': 'Bearer ' + token
+//         }
+//     }
 // });
+//
+// window.Echo.private('App.User.1')
+//     .listen('\\App\\Notifications\\MessageReceived', (e) => {
+//         console.log(e);
+//     });

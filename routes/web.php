@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/rooms', 'ChatController@chat_rooms');
+    Route::post('/request', 'ChatController@all_in_request');
+    Route::post('/me', 'ChatController@user');
+    Route::post('/rooms', 'ChatController@rooms');
+    Route::post('/messages', 'ChatController@messages');
+    Route::post('/messages/save', 'ChatController@save_message');
+});

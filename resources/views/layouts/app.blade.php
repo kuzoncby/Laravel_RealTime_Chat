@@ -85,6 +85,8 @@
 </div>
 
 <!-- Scripts -->
+<script type="text/javascript" src="http://localhost:6001/socket.io/socket.io.js"></script>
 <script src="/js/app.js"></script>
+@yield('script')
 </body>
 </html>
